@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "defaultTitle": "SoEnglish",
+    "defaultDescription": "Онлайн-платформа для вивчення англійської",
+    "galleryTitle": "SoEnglish — Галерея",
+    "contactTitle": "SoEnglish — Контакти"
+  },
+  "nav": {
+    "gallery": "Галерея",
+    "contacts": "Контакти"
+  },
+  "footer": {
+    "description": "Покращуйте англійську з гнучким графіком і персональним підходом!",
+    "facebookUrl": "https://www.facebook.com/share/G53HUh8cXRmWLHki/?mibextid=LQQJ4d",
+    "columnCompany": "Компанія",
+    "columnNav": "Навігація",
+    "columnContact": "Звʼяжіться з нами",
+    "navCourses": "Курси",
+    "navInstructor": "Станьте інструктором",
+    "phone": "+3801234567890",
+    "phoneHref": "tel:+3801234567890",
+    "email": "support@mail.com",
+    "emailHref": "mailto:support@mail.com",
+    "copyright": "© 2024 SoEnglish. Усі права захищені."
+  },
+  "home": {
+    "heroTitle": "SoEnglish - це революційний спосіб навчання",
+    "heroQuote": "“Онлайн-освіта — це навчання, підтримуване електронними засобами, яке покладається на Інтернет для взаємодії між учителем і студентом, а також для розповсюдження навчальних матеріалів”",
+    "videoButtonLabel": "Що таке null?",
+    "stats": [
+      { "value": "60,000+", "label": "Годин уроків", "icon": "time" },
+      { "value": "10,000+", "label": "Студентів", "icon": "group" },
+      { "value": "40+", "label": "Країн", "icon": "globe" }
+    ],
+    "coursesTitle": "Наші популярні курси",
+    "coursesDescription": "Дізнайтеся про найзатребуваніші курси, створені для розвитку ваших знань і навичок. Виберіть програму, яка відповідає вашим цілям, і почніть свій шлях до успіху вже сьогодні!",
+    "coursesEmpty": "Курси недоступні. Запустіть бекенд і seed бази даних.",
+    "courseLessonsSuffix": "Уроків",
+    "courseDefaultTag": "Creative",
+    "benefitsTitle": "Переваги нашого онлайн-навчання",
+    "benefits": [
+      {
+        "title": "Онлайн-дипломи",
+        "text": "Отримайте якісну освіту без відриву від повсякденних справ. Наші онлайн-дипломні програми надають гнучкий графік навчання, доступ до кращих викладачів та сучасні навчальні матеріали."
+      },
+      {
+        "title": "Короткі курси",
+        "text": "Інтенсивні програми для швидкого опанування нових навичок. Наші короткі курси ідеально підходять для тих, хто хоче оновити знання в найкоротші терміни."
+      },
+      {
+        "title": "Навчання експертів",
+        "text": "Поглиблені курси для тих, хто прагне стати професіоналом у своїй галузі. Програми розроблені досвідченими тренерами."
+      }
+    ],
+    "instructorTitle": "Станьте інструктором",
+    "instructorDescription": "Поділіться своїми знаннями та досвідом з тисячами студентів по всьому світу. Приєднуйтесь до нашої команди інструкторів, створюйте унікальні курси та заробляйте, допомагаючи іншим досягати своїх цілей.",
+    "instructorCta": "Приєднуйтесь зараз",
+    "gallerySectionTitle": "Галерея",
+    "galleryViewAll": "Переглянути всі",
+    "testimonialsTitle": "Student Testimonials",
+    "testimonialsSubtitle": "Наші студенти діляться своїми враженнями про навчання та досягнуті результати.",
+    "testimonialsEmpty": "Відгуки зʼявляться після наповнення бази."
+  },
+  "galleryPage": {
+    "heroTitle": "Галерея",
+    "emptyGallery": "Немає зображень. Перевірте бекенд і seed галереї."
+  },
+  "contactPage": {
+    "heroTitle": "Контакти",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11004.904160099883!2d28.469918191139183!3d49.23302171686191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472d5b65195a6489%3A0xcbd4e159eedd74fe!2z0JLRltC90L3QuNGG0Y8sINCS0ZbQvdC90LjRhtGM0LrQsCDQvtCx0LvQsNGB0YLRjCwgMjEwMDA!5e0!3m2!1suk!2sua!4v1732093739691!5m2!1suk!2sua",
+    "faqTitle": "Часті запитання",
+    "faqDescription": "Знайдіть відповіді на найбільш поширені запитання, які можуть виникнути у вас.",
+    "faqEmpty": "Питання завантажуються з сервера…"
+  },
+  "subscription": {
+    "title": "Розпочніть зараз!",
+    "descriptionLine1": "Зробіть перший крок до досягнення своїх цілей вже сьогодні.",
+    "descriptionLine2": "Легкий старт — великі можливості!",
+    "namePlaceholder": "Ваше ім'я",
+    "emailPlaceholder": "Ваш e-mail",
+    "submit": "Надіслати",
+    "submitLoading": "Надсилаємо…",
+    "thankYouTitleLine1": "Дякуємо",
+    "thankYouTitleLine2": "за ваш запит!",
+    "thankYouText": "Ми зв'яжемося з вами найближчим часом.",
+    "errorFallback": "Помилка запиту",
+    "errorNetwork": "Немає звʼязку з сервером"
+  },
+  "videoModal": {
+    "closeAlt": "Закрити",
+    "iframeSrc": "https://www.youtube.com/embed/4GMU08J98MQ?si=uH9WMKbGhtbK-t_t",
+    "iframeTitle": "YouTube video player"
+  },
+  "apiMessages": {
+    "subscribeNameEmailRequired": "Імʼя та email обовʼязкові",
+    "subscribeSuccess": "Дякуємо! Ми звʼяжемося з вами.",
+    "subscribeDuplicateEmail": "Цей email вже зареєстрований",
+    "subscribeServerError": "Помилка сервера",
+    "courseNotFound": "Курс не знайдено"
+  }
+}

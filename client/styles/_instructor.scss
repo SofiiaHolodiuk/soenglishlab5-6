@@ -1,0 +1,22 @@
+.instructor {
+    padding: 37px 0 157px;
+    &-wrapper {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        text-align: start;
+        gap: 20px;
+        max-width: 1100px;
+    }
+
+    .title {
+        margin-bottom: 40px;
+    }
+    .description {
+        margin-bottom: 108px;
+    }
+
+    .btn {
+        width: fit-content;
+    }
+}

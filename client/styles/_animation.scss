@@ -1,0 +1,41 @@
+[data-animate] {
+    opacity: 0; // Всі елементи починають з нульової непрозорості
+
+    &[data-animate="swim-top"] {
+        transform: translateY(100px);
+    }
+
+    &[data-animate="swim-down"] {
+        transform: translateY(-100px);
+    }
+
+    &[data-animate="swim-left"] {
+        transform: translateX(100px);
+    }
+
+    &[data-animate="swim-right"] {
+        transform: translateX(-100px);
+    }
+
+    &[data-animate="new-items"] {
+        transform: translateY(100px);
+        animation: newItems 1s forwards;
+    }
+
+    &[data-animate="fade"] {
+        animation: fadeIn 1s forwards;
+    }
+}
+
+@keyframes newItems {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}

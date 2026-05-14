@@ -1,0 +1,374 @@
+@mixin title-1 {
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+
+  @include w($md) {
+    font-size: 36px;
+  }
+}
+
+.title-1,
+.title-1 * {
+  @include title-1;
+}
+
+@mixin title-2 {
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+
+  @include w($md) {
+    font-size: 32px;
+  }
+}
+
+.title-2,
+.title-2 * {
+  @include title-2;
+}
+
+@mixin title-3 {
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+
+  @include w($md) {
+    font-size: 26px;
+  }
+}
+
+.title-3,
+.title-3 * {
+  @include title-3;
+}
+
+@mixin title-4 {
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%; /* 46.8px */
+
+  @include w($md) {
+    font-size: 24px;
+    line-height: 130%; /* 31.2px */
+  }
+}
+
+.title-4,
+.title-4 * {
+  @include title-4;
+}
+
+@mixin title-5 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+
+  @include w($md) {
+    font-size: 20px;
+  }
+}
+
+.title-5,
+.title-5 * {
+  @include title-5;
+}
+
+@mixin button-1 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%; /* 16px */
+  text-transform: uppercase;
+}
+
+.button-1,
+.button-1 * {
+  @include button-1;
+}
+
+@mixin button-2 {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%; /* 15px */
+  text-transform: uppercase;
+}
+
+.button-2,
+.button-2 * {
+  @include button-2;
+}
+
+@mixin body-1 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+
+  @include w($md) {
+    font-size: 18px;
+  }
+}
+
+.body-1,
+.body-1 * {
+  @include body-1;
+}
+
+@mixin body-2 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  @include w($md) {
+    font-size: 14px;
+  }
+}
+
+.body-2,
+.body-2 * {
+  @include body-2;
+}
+
+@mixin body-3 {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.body-3,
+.body-3 * {
+  @include body-3;
+}
+
+@mixin body-4 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 22.4px */
+  @include w($md) {
+    font-size: 14px;
+  }
+}
+
+.body-4,
+.body-4 * {
+  @include body-4;
+}
+
+@mixin body-5 {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  @include w($md) {
+    font-size: 12px;
+  }
+}
+
+.body-5,
+.body-5 * {
+  @include body-5;
+}
+
+@mixin body-6 {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+}
+
+.body-6,
+.body-6 * {
+  @include body-6;
+}
+
+@mixin mob-title-1 {
+  @include w($md) {
+    font-size: 36px;
+    letter-spacing: -0.72px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    text-transform: uppercase;
+  }
+}
+
+.mob-title-1,
+.mob-title-1 * {
+  @include mob-title-1;
+}
+
+@mixin mob-title-2 {
+  @include w($md) {
+    font-size: 32px;
+    letter-spacing: -0.32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%; /* 61.6px */
+    text-transform: uppercase;
+  }
+}
+
+.mob-title-2,
+.title-2 * {
+  @include mob-title-2;
+}
+
+@mixin mob-title-3 {
+  @include w($md) {
+    font-size: 26px;
+    letter-spacing: -0.26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%; /* 52.8px */
+    text-transform: uppercase;
+  }
+}
+
+.mob-title-3,
+.mob-title-3 * {
+  @include mob-title-3;
+}
+
+@mixin mob-title-4 {
+  @include w($md) {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; /* 46.8px */
+    text-transform: uppercase;
+  }
+}
+
+.mob-title-4,
+.mob-title-4 * {
+  @include mob-title-4;
+}
+
+@mixin mob-title-5 {
+  @include w($md) {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 28.8px */
+  }
+}
+
+.mob-title-5,
+.mob-title-5 * {
+  @include mob-title-5;
+}
+
+@mixin mob-button-1 {
+  @include w($md) {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 16px */
+    text-transform: uppercase;
+  }
+}
+
+.mob-button-1,
+.mob-button-1 * {
+  @include mob-button-1;
+}
+
+@mixin mob-button-2 {
+  @include w($md) {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 15px */
+    text-transform: uppercase;
+  }
+}
+
+.mob-button-2,
+.mob-button-2 * {
+  @include mob-button-2;
+}
+
+@mixin mob-body-1 {
+  @include w($md) {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 31.2px */
+  }
+}
+
+.mob-body-1,
+.mob-body-1 * {
+  @include mob-body-1;
+}
+
+@mixin mob-body-2 {
+  @include w($md) {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 26px */
+  }
+}
+
+.mob-body-2,
+.mob-body-2 * {
+  @include mob-body-2;
+}
+
+@mixin mob-body-3 {
+  @include w($md) {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 25.2px */
+  }
+}
+
+.mob-body-3,
+.mob-body-3 * {
+  @include mob-body-3;
+}
+
+@mixin mob-body-4 {
+  @include w($md) {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 22.4px */
+  }
+}
+
+.mob-body-4,
+.mob-body-4 * {
+  @include mob-body-4;
+}
+
+@mixin mob-body-5 {
+  @include w($md) {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 14px */
+  }
+}
+
+.mob-body-5,
+.mob-body-5 * {
+  @include mob-body-5;
+}
+
+@mixin mob-body-6 {
+  @include w($md) {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+  }
+}
+
+.mob-body-6,
+.mob-body-6 * {
+  @include mob-body-6;
+}

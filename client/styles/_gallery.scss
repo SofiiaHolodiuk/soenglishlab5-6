@@ -1,0 +1,87 @@
+.gallery {
+    padding: 72px 0 112px;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    background: url(/assets/images/backgrounds/gellery-bg.png), #794bff;
+    text-align: center;
+
+    .title {
+        margin-bottom: 40px;
+    }
+
+    .btn {
+        width: fit-content;
+        margin: 40px auto 0;
+    }
+
+    .owl-item {
+        aspect-ratio: 1/1;
+        overflow: hidden;
+        border-radius: 15px;
+        .item {
+            height: 100%;
+        }
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s;
+        }
+        &:hover {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+    .owl-carousel {
+        position: relative;
+        cursor: grab;
+        .owl-nav {
+            button {
+                background-color: rgba(108, 99, 255, 0.8); /* Напівпрозорий фон */
+                border: none;
+                border-radius: 50%; /* Кругла кнопка */
+                width: 50px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                position: relative;
+                transition:
+                    background-color 0.3s ease,
+                    transform 0.3s ease;
+
+                &:hover {
+                    background-color: rgba(79, 72, 204, 1); /* Трохи темніше при наведенні */
+                    transform: translateY(-50%) scale(1.1); /* Легке збільшення */
+                }
+
+                &:active {
+                    background-color: rgba(79, 72, 204, 1); /* Темний фон при натисканні */
+                    transform: translateY(-50%) scale(1); /* Повернення до початкового розміру */
+                }
+            }
+            .owl-prev,
+            .owl-next {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                img {
+                    max-width: 30px;
+                }
+            }
+            .owl-prev {
+                left: 10px;
+                img {
+                    transform: scaleX(-1);
+                }
+            }
+            .owl-next {
+                right: 10px;
+            }
+        }
+    }
+}

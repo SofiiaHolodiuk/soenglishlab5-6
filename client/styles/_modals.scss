@@ -1,0 +1,32 @@
+.video-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 800px;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 2px solid white;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+
+    &.-active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .modal-close {
+        cursor: pointer;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}

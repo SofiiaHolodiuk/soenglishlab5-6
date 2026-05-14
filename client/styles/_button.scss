@@ -1,0 +1,32 @@
+.btn {
+    height: 56px;
+    padding: 0 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #794bff;
+    border-radius: 10px;
+    font-weight: 600;
+    background: transparent;
+    transition:
+        background 0.4s,
+        color 0.4s;
+
+    &:hover {
+        background-color: rgba(121, 77, 255, 100);
+        color: #ffffff;
+    }
+
+    &.-white {
+        border-color: #ffffff;
+        color: #ffffff;
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.102);
+        }
+    }
+
+    &.prp {
+        background-color: #794bff;
+        color: white;
+    }
+}

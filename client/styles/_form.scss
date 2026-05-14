@@ -1,0 +1,20 @@
+input {
+    max-width: 380px;
+    width: 100%; /* Ширина поля */
+    padding: 0; /* Відсутність внутрішніх відступів */
+    text-align: center; /* Горизонтальне центрування тексту */
+    height: 77px; /* Фіксована висота поля */
+    font-size: 16px; /* Розмір тексту */
+    line-height: 50px; /* Вирівнювання тексту по вертикалі через line-height */
+    border: 2px solid #6c63ff; /* Рамка поля */
+    border-radius: 5px;
+    outline: none;
+    color: #333;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+input::placeholder {
+    color: #aaa;
+    text-align: center;
+}

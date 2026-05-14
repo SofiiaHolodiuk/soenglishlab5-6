@@ -1,0 +1,93 @@
+.testimonials {
+    padding: 200px 0;
+    position: relative;
+
+    .title {
+        text-align: center;
+    }
+
+    .subtitle {
+        margin: 32px auto 0;
+        max-width: 712px;
+        text-align: center;
+    }
+
+    &-item {
+        position: relative;
+        border: 4px solid #ad90ff;
+        border-radius: 15px;
+        box-shadow: 5px 11px 52px -18px rgba(0, 0, 0, 0.15);
+        padding: 40px 20px 20px 95px;
+        max-width: 511px;
+        margin: 0 auto;
+        z-index: 1;
+        .author {
+            text-align: end;
+        }
+        img {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(-50%, -50%);
+            max-width: 90px;
+        }
+    }
+    .testimonials-coments {
+        position: relative;
+        padding: 82px 0 322px;
+    }
+    .testimonials-bg img {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+        animation: pulse 3s infinite;
+    }
+
+    .testimonials-bg img:nth-child(1) {
+        top: 10px;
+        left: 20px;
+        animation-delay: 0.2s;
+    }
+
+    .testimonials-bg img:nth-child(2) {
+        top: 50px;
+        right: 30px;
+        animation-delay: 0.4s;
+    }
+
+    .testimonials-bg img:nth-child(3) {
+        bottom: 48px;
+        left: 30%;
+        animation-delay: 0.6s;
+    }
+
+    .testimonials-bg img:nth-child(4) {
+        bottom: 50px;
+        right: 50px;
+        animation-delay: 0.8s;
+    }
+
+    .testimonials-bg img:nth-child(5) {
+        top: 200px;
+        left: 10%;
+        transform: translateX(-50%);
+        animation-delay: 1s;
+    }
+
+    .testimonials-bg img:nth-child(6) {
+        bottom: 100px;
+        right: 20%;
+        animation-delay: 1.2s;
+    }
+    @keyframes pulse {
+        0%,
+        100% {
+            transform: scale(1); /* Початковий розмір */
+        }
+        50% {
+            transform: scale(1.2); /* Збільшення до 120% */
+        }
+    }
+}

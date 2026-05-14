@@ -1,0 +1,35 @@
+.benefits {
+    background-color: #794bff;
+    color: #ffffff;
+    position: relative;
+    padding: 50px 0 60px;
+    &-wrapper {
+        display: flex;
+        gap: 88px;
+    }
+
+    .benefits-left {
+        img {
+            margin: -90px 0 -130px;
+            width: 120%;
+        }
+    }
+
+    .section-title {
+        max-width: 400px;
+        margin-bottom: 60px;
+    }
+
+    &-items {
+        padding-left: 120px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    &-card {
+        .title {
+            margin-bottom: 10px;
+        }
+    }
+}

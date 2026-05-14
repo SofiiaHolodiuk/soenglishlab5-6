@@ -1,0 +1,27 @@
+{
+  "name": "soenglish-client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@fontsource/lato": "^5.2.7",
+    "gsap": "^3.14.2",
+    "jquery": "^3.7.1",
+    "next": "^15.1.0",
+    "owl.carousel": "^2.3.4",
+    "posthog-js": "^1.372.10",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sass": "^1.79.6",
+    "unitegallery": "^1.7.28"
+  },
+  "devDependencies": {
+    "eslint": "^9.16.0",
+    "eslint-config-next": "^15.1.0"
+  }
+}

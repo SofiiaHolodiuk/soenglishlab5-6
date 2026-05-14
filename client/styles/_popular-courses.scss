@@ -1,0 +1,76 @@
+.popular-courses {
+    padding: 120px 0;
+
+    .title {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .description {
+        max-width: 440px;
+        margin: 0 auto;
+        margin-bottom: 66px;
+        text-align: center;
+    }
+
+    .courses-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 70px;
+    }
+
+    .course-card {
+        border-radius: 15px;
+        text-align: center;
+        overflow: hidden;
+        .image {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 269/240;
+            border-radius: 15px;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.4s;
+            }
+            .tag {
+                position: absolute;
+                top: 8px;
+                left: 8px;
+                padding: 6px 12px;
+                border-radius: 12px;
+                background-color: #ffff;
+            }
+        }
+        .title {
+            margin: 12px 0 8px;
+        }
+        .info {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .rating {
+                padding: 6px;
+                border-radius: 12px;
+                background-color: $violet;
+                color: #ffff;
+                display: flex;
+                gap: 4px;
+                img {
+                    max-width: 10px;
+                    width: 100%;
+                }
+            }
+        }
+
+        &:hover {
+            .image {
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}

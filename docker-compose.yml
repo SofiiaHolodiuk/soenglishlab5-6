@@ -1,0 +1,61 @@
+# Дані MongoDB зберігаються у томі mongo_data між перезапусками.
+# Курси, FAQ, галерея, відгуки, інструктори — наповнюються сервісом mongo-seed (лише порожні колекції).
+
+services:
+  mongo:
+    image: mongo:7
+    container_name: soenglish-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 15s
+    restart: unless-stopped
+
+  mongo-seed:
+    build: ./server
+    container_name: soenglish-mongo-seed
+    command: node seed/seed.js
+    environment:
+      MONGO_URI: mongodb://mongo:27017/soenglish
+    depends_on:
+      mongo:
+        condition: service_healthy
+    restart: "no"
+
+  server:
+    build: ./server
+    container_name: soenglish-server
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: "3000"
+      MONGO_URI: mongodb://mongo:27017/soenglish
+    depends_on:
+      mongo:
+        condition: service_healthy
+      mongo-seed:
+        condition: service_completed_successfully
+    restart: unless-stopped
+
+  client:
+    build:
+      context: ./client
+      args:
+        BACKEND_URL: http://server:3000
+    container_name: soenglish-client
+    environment:
+      BACKEND_URL: http://server:3000
+    ports:
+      - "8080:3000"
+    depends_on:
+      - server
+    restart: unless-stopped
+
+volumes:
+  mongo_data:
