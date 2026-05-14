@@ -1,0 +1,334 @@
+.lab-tasks {
+  margin: 56px auto 48px;
+  padding: 0 16px;
+
+  @media (min-width: $md) {
+    margin-top: 72px;
+    margin-bottom: 64px;
+  }
+}
+
+.lab-tasks__panel {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 36px 28px 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(121, 75, 255, 0.35);
+  background: linear-gradient(165deg, rgba(121, 75, 255, 0.06) 0%, #fff 42%, #fff 100%);
+  box-shadow:
+    0 1px 2px rgba(27, 36, 41, 0.04),
+    0 18px 48px rgba(101, 51, 255, 0.08);
+
+  @media (min-width: $md) {
+    padding: 44px 40px 48px;
+  }
+}
+
+.lab-tasks__header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.lab-tasks__eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $violet;
+  background: rgba(101, 51, 255, 0.1);
+  border: 1px solid rgba(101, 51, 255, 0.2);
+}
+
+.lab-tasks__title {
+  margin-bottom: 12px !important;
+  color: $black;
+}
+
+.lab-tasks__lead {
+  margin: 0 auto;
+  max-width: 520px;
+  font-size: 17px;
+  line-height: 1.55;
+  color: rgba($black, 0.72);
+}
+
+.lab-tasks__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.lab-tasks__btn-primary {
+  min-width: 140px;
+}
+
+.lab-tasks__btn-secondary {
+  height: 56px;
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  border: 2px solid rgba(121, 75, 255, 0.45);
+  color: #5a3ad6;
+  background: #fff;
+  transition:
+    background 0.25s,
+    border-color 0.25s,
+    color 0.25s;
+
+  &:hover {
+    background: rgba(121, 75, 255, 0.08);
+    border-color: #794bff;
+    color: #4a2fc4;
+  }
+
+  &.-active {
+    background: rgba(121, 75, 255, 0.14);
+    border-color: #794bff;
+    color: #3d26a3;
+    box-shadow: inset 0 0 0 1px rgba(121, 75, 255, 0.25);
+  }
+}
+
+.lab-tasks__btn-compact {
+  height: 44px !important;
+  min-height: 44px;
+  padding: 0 18px !important;
+  font-size: 14px !important;
+}
+
+.lab-tasks__form {
+  margin-bottom: 32px;
+  padding: 24px 20px 26px;
+  border-radius: 14px;
+  background: rgba(54, 84, 99, 0.04);
+  border: 1px solid rgba(54, 84, 99, 0.1);
+
+  @media (min-width: $sm) {
+    padding: 28px 28px 30px;
+  }
+}
+
+.lab-tasks__form-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr;
+
+  @media (min-width: $sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.lab-tasks__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+
+  &--full {
+    @media (min-width: $sm) {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+.lab-tasks__field-label {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: rgba($black, 0.55);
+}
+
+.lab-tasks__field input,
+.lab-tasks__field select,
+.lab-tasks__delete-select {
+  width: 100%;
+  max-width: none;
+  height: 48px;
+  padding: 0 14px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: $black;
+  border: 2px solid rgba(121, 75, 255, 0.35);
+  border-radius: 10px;
+  outline: none;
+  background: #fff;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+
+  &::placeholder {
+    color: #999;
+    font-weight: 500;
+  }
+
+  &:focus {
+    border-color: #794bff;
+    box-shadow: 0 0 0 3px rgba(121, 75, 255, 0.18);
+  }
+}
+
+.lab-tasks__field select,
+.lab-tasks__delete-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23554663' d='M1 1.5L6 6l5-4.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+
+.lab-tasks__delete-select {
+  max-width: 160px;
+  width: auto;
+  flex: 0 0 auto;
+}
+
+.lab-tasks__form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+  justify-content: flex-start;
+}
+
+.lab-tasks__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lab-tasks__empty {
+  text-align: center;
+  padding: 32px 20px;
+  font-size: 16px;
+  color: rgba($black, 0.5);
+  border-radius: 12px;
+  border: 1px dashed rgba(121, 75, 255, 0.35);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.lab-tasks__item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(54, 84, 99, 0.12);
+
+  &:first-of-type {
+    padding-top: 4px;
+  }
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  @media (min-width: $md) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &.-done {
+    opacity: 0.72;
+
+    .lab-tasks__item-title {
+      text-decoration: line-through;
+      text-decoration-color: rgba($black, 0.35);
+    }
+  }
+}
+
+.lab-tasks__item-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.lab-tasks__badge {
+  flex-shrink: 0;
+  margin-top: 2px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  &.-high {
+    color: #b71c1c;
+    background: rgba(183, 28, 28, 0.1);
+    border: 1px solid rgba(183, 28, 28, 0.22);
+  }
+
+  &.-medium {
+    color: #e65100;
+    background: rgba(230, 81, 0, 0.1);
+    border: 1px solid rgba(230, 81, 0, 0.22);
+  }
+
+  &.-low {
+    color: #2e7d32;
+    background: rgba(46, 125, 50, 0.1);
+    border: 1px solid rgba(46, 125, 50, 0.22);
+  }
+}
+
+.lab-tasks__item-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lab-tasks__item-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: $black;
+  word-break: break-word;
+}
+
+.lab-tasks__meta {
+  font-size: 14px;
+  color: rgba($black, 0.55);
+}
+
+.lab-tasks__done-label {
+  color: rgba(46, 125, 50, 0.85);
+  font-weight: 600;
+}
+
+.lab-tasks__row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  flex-shrink: 0;
+
+  @media (min-width: $md) {
+    justify-content: flex-end;
+  }
+}
+
+.lab-tasks__delete {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}

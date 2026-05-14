@@ -2,6 +2,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { HomeEffects } from '@/components/HomeEffects';
 import { SubscriptionSection } from '@/components/SubscriptionSection';
+import { LabTasksSection } from '@/components/LabTasksSection';
 import { getCourses, getGallery, getTestimonials, getSiteContent } from '@/api/server-api';
 import { publicAsset } from '@/utils/paths';
 import Image from 'next/image';
@@ -205,6 +206,10 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      <div className="container-content">
+        <LabTasksSection />
+      </div>
 
       <SubscriptionSection subscription={content?.subscription} />
 
