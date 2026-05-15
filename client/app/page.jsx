@@ -3,6 +3,7 @@ import { Footer } from '@/components/Footer';
 import { HomeEffects } from '@/components/HomeEffects';
 import { SubscriptionSection } from '@/components/SubscriptionSection';
 import { LabTasksSection } from '@/components/LabTasksSection';
+import { SentryLabSection } from '@/components/SentryLabSection';
 import { getCourses, getGallery, getTestimonials, getSiteContent } from '@/api/server-api';
 import { publicAsset } from '@/utils/paths';
 import Image from 'next/image';
@@ -209,6 +210,7 @@ export default async function HomePage() {
 
       <div className="container-content">
         <LabTasksSection />
+        <SentryLabSection />
       </div>
 
       <SubscriptionSection subscription={content?.subscription} />

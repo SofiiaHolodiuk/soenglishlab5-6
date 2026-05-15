@@ -332,3 +332,36 @@
   gap: 10px;
   align-items: center;
 }
+
+.sentry-lab {
+  margin-top: 28px;
+}
+
+.sentry-lab__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.sentry-lab__hint {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba($black, 0.55);
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+.sentry-lab__notice {
+  margin: 12px 0 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2e7d32;
+  max-width: 520px;
+  margin-inline: auto;
+}

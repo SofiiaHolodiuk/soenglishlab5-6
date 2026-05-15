@@ -1,32 +1,37 @@
-'use client';
+"use client";
 
-import { useCallback, useMemo, useState } from 'react';
-import { usePostHog, useFeatureFlagEnabled } from 'posthog-js/react';
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { usePostHog, useFeatureFlagEnabled } from "posthog-js/react";
 
 function newId() {
   return `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
 }
 
 function priorityClass(p) {
-  if (p === 'high') return 'lab-tasks__badge -high';
-  if (p === 'medium') return 'lab-tasks__badge -medium';
-  return 'lab-tasks__badge -low';
+  if (p === "high") return "lab-tasks__badge -high";
+  if (p === "medium") return "lab-tasks__badge -medium";
+  return "lab-tasks__badge -low";
 }
 
 export function LabTasksSection() {
   const posthog = usePostHog();
-  const urgentFilterEnabled = useFeatureFlagEnabled('show-urgent-filter');
+  const urgentFilterEnabled = useFeatureFlagEnabled("show-urgent-filter");
+
+  useEffect(() => {
+    if (!posthog) return;
+    posthog.reloadFeatureFlags();
+  }, [posthog]);
 
   const [tasks, setTasks] = useState([]);
   const [formOpen, setFormOpen] = useState(false);
-  const [title, setTitle] = useState('');
-  const [priority, setPriority] = useState('high');
-  const [category, setCategory] = useState('work');
+  const [title, setTitle] = useState("");
+  const [priority, setPriority] = useState("high");
+  const [category, setCategory] = useState("work");
   const [urgentOnly, setUrgentOnly] = useState(false);
 
   const visibleTasks = useMemo(() => {
     if (!urgentOnly) return tasks;
-    return tasks.filter(t => t.priority === 'high');
+    return tasks.filter((t) => t.priority === "high");
   }, [tasks, urgentOnly]);
 
   const openForm = useCallback(() => {
@@ -34,7 +39,7 @@ export function LabTasksSection() {
   }, []);
 
   const submitTask = useCallback(
-    e => {
+    (e) => {
       e.preventDefault();
       const trimmed = title.trim();
       if (!trimmed) return;
@@ -47,41 +52,44 @@ export function LabTasksSection() {
         createdAt: Date.now(),
         completed: false,
       };
-      setTasks(prev => [task, ...prev]);
-      setTitle('');
+      setTasks((prev) => [task, ...prev]);
+      setTitle("");
       setFormOpen(false);
 
-      posthog?.capture('task_created', {
+      posthog?.capture("task_created", {
         priority,
         category,
         is_authenticated: false,
       });
     },
-    [title, priority, category, posthog]
+    [title, priority, category, posthog],
   );
 
   const completeTask = useCallback(
-    id => {
-      setTasks(prev =>
-        prev.map(t => {
+    (id) => {
+      setTasks((prev) =>
+        prev.map((t) => {
           if (t.id !== id || t.completed) return t;
-          const seconds = Math.max(0, Math.round((Date.now() - t.createdAt) / 1000));
-          posthog?.capture('task_completed', {
+          const seconds = Math.max(
+            0,
+            Math.round((Date.now() - t.createdAt) / 1000),
+          );
+          posthog?.capture("task_completed", {
             time_to_complete_seconds: seconds,
           });
           return { ...t, completed: true, completedAt: Date.now() };
-        })
+        }),
       );
     },
-    [posthog]
+    [posthog],
   );
 
   const deleteTask = useCallback(
     (id, reason) => {
-      setTasks(prev => prev.filter(t => t.id !== id));
-      posthog?.capture('task_deleted', { reason });
+      setTasks((prev) => prev.filter((t) => t.id !== id));
+      posthog?.capture("task_deleted", { reason });
     },
-    [posthog]
+    [posthog],
   );
 
   return (
@@ -91,19 +99,24 @@ export function LabTasksSection() {
           <span className="lab-tasks__eyebrow">Лаб. 5 · PostHog</span>
           <h2 className="title title-3 lab-tasks__title">Практика: завдання</h2>
           <p className="lab-tasks__lead">
-            Додавайте й виконуйте пункти — події відправляються в PostHog для воронок і записів сесій.
+            Додавайте й виконуйте пункти — події відправляються в PostHog для
+            воронок і записів сесій.
           </p>
         </header>
 
         <div className="lab-tasks__toolbar">
-          <button type="button" className="btn prp lab-tasks__btn-primary" onClick={openForm}>
+          <button
+            type="button"
+            className="btn prp lab-tasks__btn-primary"
+            onClick={openForm}
+          >
             Додати завдання
           </button>
           {urgentFilterEnabled ? (
             <button
               type="button"
-              className={`lab-tasks__btn-secondary${urgentOnly ? ' -active' : ''}`}
-              onClick={() => setUrgentOnly(v => !v)}
+              className={`lab-tasks__btn-secondary${urgentOnly ? " -active" : ""}`}
+              onClick={() => setUrgentOnly((v) => !v)}
             >
               Лише термінові
             </button>
@@ -118,14 +131,17 @@ export function LabTasksSection() {
                 <input
                   type="text"
                   value={title}
-                  onChange={e => setTitle(e.target.value)}
+                  onChange={(e) => setTitle(e.target.value)}
                   placeholder="Наприклад: повторити лексику з уроку 3"
                   autoComplete="off"
                 />
               </label>
               <label className="lab-tasks__field">
                 <span className="lab-tasks__field-label">Пріоритет</span>
-                <select value={priority} onChange={e => setPriority(e.target.value)}>
+                <select
+                  value={priority}
+                  onChange={(e) => setPriority(e.target.value)}
+                >
                   <option value="high">high</option>
                   <option value="medium">medium</option>
                   <option value="low">low</option>
@@ -136,7 +152,7 @@ export function LabTasksSection() {
                 <input
                   type="text"
                   value={category}
-                  onChange={e => setCategory(e.target.value)}
+                  onChange={(e) => setCategory(e.target.value)}
                   placeholder="наприклад, work"
                   autoComplete="off"
                 />
@@ -146,7 +162,11 @@ export function LabTasksSection() {
               <button type="submit" className="btn prp lab-tasks__btn-primary">
                 Зберегти
               </button>
-              <button type="button" className="lab-tasks__btn-secondary" onClick={() => setFormOpen(false)}>
+              <button
+                type="button"
+                className="lab-tasks__btn-secondary"
+                onClick={() => setFormOpen(false)}
+              >
                 Скасувати
               </button>
             </div>
@@ -155,27 +175,45 @@ export function LabTasksSection() {
 
         <ul className="lab-tasks__list">
           {visibleTasks.length === 0 ? (
-            <li className="lab-tasks__empty">Поки що немає завдань у цьому списку.</li>
+            <li className="lab-tasks__empty">
+              Поки що немає завдань у цьому списку.
+            </li>
           ) : (
-            visibleTasks.map(t => (
-              <li key={t.id} className={`lab-tasks__item${t.completed ? ' -done' : ''}`}>
+            visibleTasks.map((t) => (
+              <li
+                key={t.id}
+                className={`lab-tasks__item${t.completed ? " -done" : ""}`}
+              >
                 <div className="lab-tasks__item-main">
-                  <span className={priorityClass(t.priority)}>{t.priority}</span>
+                  <span className={priorityClass(t.priority)}>
+                    {t.priority}
+                  </span>
                   <div className="lab-tasks__item-text">
                     <span className="lab-tasks__item-title">{t.title}</span>
                     <span className="lab-tasks__meta">
                       {t.category}
-                      {t.completed ? <span className="lab-tasks__done-label"> · Виконано</span> : null}
+                      {t.completed ? (
+                        <span className="lab-tasks__done-label">
+                          {" "}
+                          · Виконано
+                        </span>
+                      ) : null}
                     </span>
                   </div>
                 </div>
                 <div className="lab-tasks__row-actions">
                   {!t.completed ? (
-                    <button type="button" className="btn prp lab-tasks__btn-compact" onClick={() => completeTask(t.id)}>
+                    <button
+                      type="button"
+                      className="btn prp lab-tasks__btn-compact"
+                      onClick={() => completeTask(t.id)}
+                    >
                       Виконати
                     </button>
                   ) : null}
-                  <DeleteTaskButton onDelete={reason => deleteTask(t.id, reason)} />
+                  <DeleteTaskButton
+                    onDelete={(reason) => deleteTask(t.id, reason)}
+                  />
                 </div>
               </li>
             ))
@@ -188,11 +226,15 @@ export function LabTasksSection() {
 
 function DeleteTaskButton({ onDelete }) {
   const [showReason, setShowReason] = useState(false);
-  const [reason, setReason] = useState('mistake');
+  const [reason, setReason] = useState("mistake");
 
   if (!showReason) {
     return (
-      <button type="button" className="lab-tasks__btn-secondary lab-tasks__btn-compact" onClick={() => setShowReason(true)}>
+      <button
+        type="button"
+        className="lab-tasks__btn-secondary lab-tasks__btn-compact"
+        onClick={() => setShowReason(true)}
+      >
         Видалити
       </button>
     );
@@ -200,15 +242,27 @@ function DeleteTaskButton({ onDelete }) {
 
   return (
     <div className="lab-tasks__delete">
-      <select className="lab-tasks__delete-select" value={reason} onChange={e => setReason(e.target.value)}>
+      <select
+        className="lab-tasks__delete-select"
+        value={reason}
+        onChange={(e) => setReason(e.target.value)}
+      >
         <option value="mistake">помилка</option>
         <option value="duplicate">дублікат</option>
         <option value="other">інше</option>
       </select>
-      <button type="button" className="btn prp lab-tasks__btn-compact" onClick={() => onDelete(reason)}>
+      <button
+        type="button"
+        className="btn prp lab-tasks__btn-compact"
+        onClick={() => onDelete(reason)}
+      >
         Підтвердити
       </button>
-      <button type="button" className="lab-tasks__btn-secondary lab-tasks__btn-compact" onClick={() => setShowReason(false)}>
+      <button
+        type="button"
+        className="lab-tasks__btn-secondary lab-tasks__btn-compact"
+        onClick={() => setShowReason(false)}
+      >
         Назад
       </button>
     </div>

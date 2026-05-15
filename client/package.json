@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fontsource/lato": "^5.2.7",
+    "@sentry/nextjs": "^10.53.1",
     "gsap": "^3.14.2",
     "jquery": "^3.7.1",
     "next": "^15.1.0",
@@ -21,6 +22,7 @@
     "unitegallery": "^1.7.28"
   },
   "devDependencies": {
+    "@types/react": "19.2.14",
     "eslint": "^9.16.0",
     "eslint-config-next": "^15.1.0"
   }
